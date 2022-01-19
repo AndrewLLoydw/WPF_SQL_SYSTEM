@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_SQL_SYSTEM.Services;
 
 namespace WPF_SQL_SYSTEM.Views
 {
@@ -20,11 +21,6 @@ namespace WPF_SQL_SYSTEM.Views
     /// </summary>
     public partial class CreateErrand : UserControl
     {
-        public CreateErrand()
-        {
-            InitializeComponent();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 

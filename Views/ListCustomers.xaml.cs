@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_SQL_SYSTEM.Services;
 
 namespace WPF_SQL_SYSTEM.Views
 {
@@ -20,9 +21,18 @@ namespace WPF_SQL_SYSTEM.Views
     /// </summary>
     public partial class ListCustomers : UserControl
     {
+
+        private readonly ICustomerService customerService = new CustomerService();
+
         public ListCustomers()
         {
             InitializeComponent();
+
+            lvCustomers.Items.Clear();
+            foreach (var customer in customerService.GetAllCustomers())
+            {
+                lvCustomers.Items.Add(customer);
+            }
         }
     }
 }
