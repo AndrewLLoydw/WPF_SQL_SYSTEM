@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="WPF_SQL_SYSTEM.Views.ListCustomers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_SQL_SYSTEM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <Label Margin="0,0,0,15" Grid.Column="0" Content="Lista med kunder" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20"  />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="Kund ID" />
+                <TextBlock Grid.Column="1" Text="Kund" />
+                <TextBlock Grid.Column="2" Text="E-postadress" />
+            </Grid>
+        </StackPanel>
+
+
+        <ListView x:Name="lvCustomers" DataContext="CustomerManager_WPF_SQL.Models.Customer" Grid.Row="1" Background="#e8e8e8e8" VerticalContentAlignment="Top" HorizontalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.08*" />
+                            <ColumnDefinition Width="1.1*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="{Binding Id}" />
+                        <TextBlock Grid.Column="1" ><Run Text=""/><Run Text="{Binding FirstName}"/><Run Text=""/><Run Text="{Binding LastName}"/></TextBlock>
+                        <TextBlock Grid.Column="2" Text="{Binding Email}"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>
