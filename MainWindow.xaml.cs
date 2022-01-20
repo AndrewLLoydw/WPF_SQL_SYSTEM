@@ -24,5 +24,10 @@ namespace WPF_SQL_SYSTEM
         {
             InitializeComponent();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
