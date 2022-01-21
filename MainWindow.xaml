@@ -30,9 +30,9 @@
 
         <StackPanel Grid.Row="1" Background="#feee">
             <RadioButton Style="{StaticResource RadioButtonStyling}" Content="Lägg till kund" Command="{Binding CreateCustomerViewCommand}"/>
-            <RadioButton Style="{StaticResource RadioButtonStyling}" BorderThickness="0" VerticalAlignment="Center" Content="Lägg till ett ärende" Command="{Binding CreateErrandViewCommand}"/>
-            <RadioButton Style="{StaticResource RadioButtonStyling}" BorderThickness="0" VerticalAlignment="Center" Content="Lista upp alla kunder" Command="{Binding ListCustomerCommand}"/>
-            <RadioButton Style="{StaticResource RadioButtonStyling}" BorderThickness="0" VerticalAlignment="Center" Content="Lista upp alla ärenden" Command="{Binding ListErrandViewCommand}"/>
+            <RadioButton Style="{StaticResource RadioButtonStyling}" Content="Lägg till ett ärende" Command="{Binding CreateErrandViewCommand}"/>
+            <RadioButton Style="{StaticResource RadioButtonStyling}" Content="Lista upp alla kunder" Command="{Binding ListCustomerCommand}"/>
+            <RadioButton Style="{StaticResource RadioButtonStyling}" Content="Lista upp alla ärenden" Command="{Binding ListErrandViewCommand}"/>
         </StackPanel>
 
 
