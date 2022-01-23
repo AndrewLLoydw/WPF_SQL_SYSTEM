@@ -13,8 +13,8 @@ namespace WPF_SQL_SYSTEM.Services
     internal interface ICustomerService
     {
         bool CreateCustomer(string firstname, string lastname, string email, string phonenumber, string streetaddress, string postalnumber, string city, string country);
-        IEnumerable<Customer> GetAllCustomers(); 
-        Customer GetCustomer(string email);
+        IEnumerable<Customer> GetAllCustomers();
+        Customer GetCustomer(int id);
     }
 
 
@@ -25,6 +25,7 @@ namespace WPF_SQL_SYSTEM.Services
         public bool CreateCustomer(string firstname, string lastname, string email, string phonenumber, string streetaddress, string postalnumber, string city, string country)
         {
             var customer = _context.Customers.Where(x => x.Email == email).FirstOrDefault();
+
             if (customer == null)
             {
                 _context.Customers.Add(new Customer
@@ -53,9 +54,9 @@ namespace WPF_SQL_SYSTEM.Services
             return _context.Customers.Include(x => x.Address);
         }
 
-        public Customer GetCustomer(string email)
+        public Customer GetCustomer(int id)
         {
-            var customer = _context.Customers.Where(x => x.Email == email).FirstOrDefault();
+            var customer = _context.Customers.Where(x => x.Id == id).FirstOrDefault();
 
             return customer;
         }

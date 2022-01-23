@@ -53,11 +53,11 @@
 
                         <TextBlock x:Name="tbCustomerId" Grid.Column="0" Text="{Binding CustomerId}"/>
                         <TextBlock x:Name="tbCustomerErrand" Grid.Column="1" Text="{Binding CustomerErrand}"/>
-                        <TextBlock x:Name="tbCustomerErrandStatus" Grid.Column="2" Text="{Binding CustomerErrandStatus}"/>
+                        <TextBlock x:Name="tbCustomerErrandStatus" Grid.Column="2" Text=""/>
                         <TextBlock x:Name="tbCustomerErrandId" Grid.Column="3" Text="{Binding CustomerErrandId}"/>
                         <StackPanel>
-                            <TextBlock x:Name="tbCustomerErrandCreated" Grid.Column="4" Text="{Binding CustomerErrandCreated}"/>
-                            <TextBlock x:Name="tbCustomerErrandChanged" Grid.Column="4" Text="{Binding CustomerErrandChanged}"/>
+                            <TextBlock x:Name="tbCustomerErrandCreated" Grid.Column="4" Text=""/>
+                            <TextBlock x:Name="tbCustomerErrandChanged" Grid.Column="4" Text=""/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

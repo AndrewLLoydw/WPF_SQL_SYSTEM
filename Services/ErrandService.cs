@@ -10,7 +10,7 @@ namespace WPF_SQL_SYSTEM.Services
 {
     internal interface IErrandService
     {
-        bool CreateErrand(string errandtitle, string erranddescription, string errandstatus);
+        bool CreateErrand(int customerid, string errandtitle, string erranddescription);
         IEnumerable<CustomerErrand> GetAllErrands();
     }
 
@@ -19,16 +19,19 @@ namespace WPF_SQL_SYSTEM.Services
 
         private readonly SqlContext _context = new();
 
-        public bool CreateErrand(string errandtitle, string erranddescription, string errandstatus)
+        public bool CreateErrand(int customerid, string errandtitle, string erranddescription)
         {
             var errand = _context.CustomerErrands.Where(x => x.ErrandTitle == errandtitle).FirstOrDefault();
+            var customer = _context.Customers.Where(x => x.Id == customerid).FirstOrDefault();
+
+
             if (errand != null)
             {
                 _context.CustomerErrands.Add(new CustomerErrand
                 {
+                    CustomerId = customerid,
                     ErrandTitle = errandtitle,
                     ErrandDescription = erranddescription,
-                    ErrandStatus = errandstatus
                 });
                 _context.SaveChanges();
                 return true;
@@ -40,5 +43,6 @@ namespace WPF_SQL_SYSTEM.Services
         {
             return _context.CustomerErrands;
         }
+
     }
 }
