@@ -52,7 +52,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock x:Name="tbCustomerId" Grid.Column="0" Text="{Binding CustomerId}"/>
-                        <TextBlock x:Name="tbCustomerErrand" Grid.Column="1" Text="{Binding CustomerErrand}"/>
+                        <TextBlock x:Name="tbCustomerErrand" Grid.Column="1" Text="{Binding ErrandDescription}"/>
                         <TextBlock x:Name="tbCustomerErrandStatus" Grid.Column="2" Text=""/>
                         <TextBlock x:Name="tbCustomerErrandId" Grid.Column="3" Text="{Binding CustomerErrandId}"/>
                         <StackPanel>

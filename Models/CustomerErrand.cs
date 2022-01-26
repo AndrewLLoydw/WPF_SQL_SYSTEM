@@ -8,9 +8,9 @@ namespace WPF_SQL_SYSTEM.Models
         public int Id { get; set; }
         public string ErrandTitle { get; set; } = null!;
         public string ErrandDescription { get; set; } = null!;
-        public string ErrandCreatedTime { get; set; } = null!;
-        public string ErrandChangedTime { get; set; } = null!;
-        public string ErrandStatus { get; set; } = null!;
+        public DateTime ErrandCreatedTime { get; set; }
+        public DateTime ErrandChangedTime { get; set; }
+        public string ErrandStatus { get; set; }
         public int CustomerId { get; set; }
 
         public virtual Customer Customer { get; set; } = null!;

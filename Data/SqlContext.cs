@@ -79,7 +79,7 @@ namespace WPF_SQL_SYSTEM.Data
 
                 entity.Property(e => e.ErrandDescription).HasMaxLength(100);
 
-                entity.Property(e => e.ErrandStatus).HasMaxLength(20);
+                entity.Property(e => e.ErrandStatus).HasMaxLength(20).IsRequired(required:false);
 
                 entity.Property(e => e.ErrandTitle).HasMaxLength(100);
 

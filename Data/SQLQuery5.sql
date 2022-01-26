@@ -26,8 +26,8 @@ CREATE TABLE CustomerErrands (
 	Id int not null identity primary key,
 	ErrandTitle nvarchar(100) not null,
 	ErrandDescription nvarchar(100) not null,
-	ErrandCreatedTime DateTime not null,
-	ErrandChangedTime DateTime not null,
+	ErrandCreatedTime nvarchar(20),
+	ErrandChangedTime nvarchar(20),
 	ErrandStatus nvarchar(20),
 	CustomerId int not null references Customers(Id)
 )
